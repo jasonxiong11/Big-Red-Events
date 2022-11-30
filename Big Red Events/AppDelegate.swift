@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Big Red Events
 //
-//  Created by Jason Xiong on 11/30/22.
+//  Created by Jason Xiong and Tina Sherpa on 11/30/22.
 //
 
 import UIKit

@@ -13,6 +13,11 @@
 		0788CA242937E8F900838007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0788CA222937E8F900838007 /* Main.storyboard */; };
 		0788CA262937E8FA00838007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0788CA252937E8FA00838007 /* Assets.xcassets */; };
 		0788CA292937E8FA00838007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0788CA272937E8FA00838007 /* LaunchScreen.storyboard */; };
+		0788CA312937EA9D00838007 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA302937EA9D00838007 /* DiscoverViewController.swift */; };
+		0788CA332937EAAF00838007 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA322937EAAF00838007 /* SavedViewController.swift */; };
+		0788CA372937EB3E00838007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA362937EB3E00838007 /* Event.swift */; };
+		0788CA392937EB9A00838007 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA382937EB9A00838007 /* EventTableViewCell.swift */; };
+		0788CA3B2937EBC900838007 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA3A2937EBC900838007 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		0788CA252937E8FA00838007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0788CA282937E8FA00838007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0788CA2A2937E8FA00838007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0788CA302937EA9D00838007 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		0788CA322937EAAF00838007 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		0788CA362937EB3E00838007 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0788CA382937EB9A00838007 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		0788CA3A2937EBC900838007 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,11 @@
 				0788CA1C2937E8F900838007 /* AppDelegate.swift */,
 				0788CA1E2937E8F900838007 /* SceneDelegate.swift */,
 				0788CA202937E8F900838007 /* ViewController.swift */,
+				0788CA302937EA9D00838007 /* DiscoverViewController.swift */,
+				0788CA382937EB9A00838007 /* EventTableViewCell.swift */,
+				0788CA322937EAAF00838007 /* SavedViewController.swift */,
+				0788CA3A2937EBC900838007 /* AddViewController.swift */,
+				0788CA362937EB3E00838007 /* Event.swift */,
 				0788CA222937E8F900838007 /* Main.storyboard */,
 				0788CA252937E8FA00838007 /* Assets.xcassets */,
 				0788CA272937E8FA00838007 /* LaunchScreen.storyboard */,
@@ -138,8 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0788CA392937EB9A00838007 /* EventTableViewCell.swift in Sources */,
 				0788CA212937E8F900838007 /* ViewController.swift in Sources */,
+				0788CA3B2937EBC900838007 /* AddViewController.swift in Sources */,
+				0788CA312937EA9D00838007 /* DiscoverViewController.swift in Sources */,
 				0788CA1D2937E8F900838007 /* AppDelegate.swift in Sources */,
+				0788CA332937EAAF00838007 /* SavedViewController.swift in Sources */,
+				0788CA372937EB3E00838007 /* Event.swift in Sources */,
 				0788CA1F2937E8F900838007 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
