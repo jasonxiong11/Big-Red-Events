@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07261915293902B8009A3212 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261914293902B8009A3212 /* DetailViewController.swift */; };
 		0788CA1D2937E8F900838007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA1C2937E8F900838007 /* AppDelegate.swift */; };
 		0788CA1F2937E8F900838007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA1E2937E8F900838007 /* SceneDelegate.swift */; };
 		0788CA212937E8F900838007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA202937E8F900838007 /* ViewController.swift */; };
@@ -18,9 +19,11 @@
 		0788CA372937EB3E00838007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA362937EB3E00838007 /* Event.swift */; };
 		0788CA392937EB9A00838007 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA382937EB9A00838007 /* EventTableViewCell.swift */; };
 		0788CA3B2937EBC900838007 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788CA3A2937EBC900838007 /* AddViewController.swift */; };
+		AA356B8889598252E5EE7779 /* Pods_Big_Red_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC15A34C529FD7EF52AD34D /* Pods_Big_Red_Events.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07261914293902B8009A3212 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0788CA192937E8F900838007 /* Big Red Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Red Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0788CA1C2937E8F900838007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0788CA1E2937E8F900838007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		0788CA362937EB3E00838007 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0788CA382937EB9A00838007 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		0788CA3A2937EBC900838007 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		6AC15A34C529FD7EF52AD34D /* Pods_Big_Red_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_Red_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		828E577BED31FA0A05491789 /* Pods-Big Red Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big Red Events.release.xcconfig"; path = "Target Support Files/Pods-Big Red Events/Pods-Big Red Events.release.xcconfig"; sourceTree = "<group>"; };
+		CEB300F80DE753C653BC752B /* Pods-Big Red Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big Red Events.debug.xcconfig"; path = "Target Support Files/Pods-Big Red Events/Pods-Big Red Events.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA356B8889598252E5EE7779 /* Pods_Big_Red_Events.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02DBDE1BCA7E9F26C6490236 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEB300F80DE753C653BC752B /* Pods-Big Red Events.debug.xcconfig */,
+				828E577BED31FA0A05491789 /* Pods-Big Red Events.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		0788CA102937E8F900838007 = {
 			isa = PBXGroup;
 			children = (
 				0788CA1B2937E8F900838007 /* Big Red Events */,
 				0788CA1A2937E8F900838007 /* Products */,
+				02DBDE1BCA7E9F26C6490236 /* Pods */,
+				D2ED08DEDF1557C5CC06CB37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +91,7 @@
 				0788CA382937EB9A00838007 /* EventTableViewCell.swift */,
 				0788CA322937EAAF00838007 /* SavedViewController.swift */,
 				0788CA3A2937EBC900838007 /* AddViewController.swift */,
+				07261914293902B8009A3212 /* DetailViewController.swift */,
 				0788CA362937EB3E00838007 /* Event.swift */,
 				0788CA222937E8F900838007 /* Main.storyboard */,
 				0788CA252937E8FA00838007 /* Assets.xcassets */,
@@ -82,6 +101,14 @@
 			path = "Big Red Events";
 			sourceTree = "<group>";
 		};
+		D2ED08DEDF1557C5CC06CB37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AC15A34C529FD7EF52AD34D /* Pods_Big_Red_Events.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0788CA2D2937E8FA00838007 /* Build configuration list for PBXNativeTarget "Big Red Events" */;
 			buildPhases = (
+				D10813D9DBEF719F8BAC9F82 /* [CP] Check Pods Manifest.lock */,
 				0788CA152937E8F900838007 /* Sources */,
 				0788CA162937E8F900838007 /* Frameworks */,
 				0788CA172937E8F900838007 /* Resources */,
+				D4AB69EF593FEDFA30BF4043 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,11 +177,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D10813D9DBEF719F8BAC9F82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Big Red Events-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4AB69EF593FEDFA30BF4043 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Big Red Events/Pods-Big Red Events-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Big Red Events/Pods-Big Red Events-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Big Red Events/Pods-Big Red Events-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0788CA152937E8F900838007 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07261915293902B8009A3212 /* DetailViewController.swift in Sources */,
 				0788CA392937EB9A00838007 /* EventTableViewCell.swift in Sources */,
 				0788CA212937E8F900838007 /* ViewController.swift in Sources */,
 				0788CA3B2937EBC900838007 /* AddViewController.swift in Sources */,
@@ -302,6 +374,7 @@
 		};
 		0788CA2E2937E8FA00838007 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEB300F80DE753C653BC752B /* Pods-Big Red Events.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,6 +403,7 @@
 		};
 		0788CA2F2937E8FA00838007 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828E577BED31FA0A05491789 /* Pods-Big Red Events.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

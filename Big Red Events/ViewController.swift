@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UITabBarController {
 
@@ -23,8 +24,23 @@ class ViewController: UITabBarController {
         self.tabBar.backgroundColor = UIColor.white
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().backgroundImage = UIImage()
+        
+        testParseConnection()
     }
-
+    
+    
+    func testParseConnection(){
+        let myObj = PFObject(className:"FirstClass")
+        myObj["message"] = "Hey ! First message from Swift. Parse is now connected"
+        myObj.saveInBackground { (success, error) in
+            if(success){
+                print("You are connected!")
+            }else{
+                print("An error has occurred!")
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -36,7 +52,7 @@ class ViewController: UITabBarController {
         let tab2Item = UITabBarItem(title: "Saved", image: UIImage(systemName: "heart"), tag: 0)
         tab2.tabBarItem = tab2Item
         
-        let tab3 = AddViewController()
+        let tab3 = AddViewController(delegate: tab1)
         let tab3Item = UITabBarItem(title: "Add Event", image: UIImage(systemName: "plus"), tag: 0)
         tab3.tabBarItem = tab3Item
         

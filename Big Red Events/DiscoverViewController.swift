@@ -26,7 +26,6 @@ class DiscoverViewController: UIViewController {
         view.addSubview(titleLabel)
         
         eventTableView.translatesAutoresizingMaskIntoConstraints = false
-//        eventTableView.backgroundColor = .systemRed
         eventTableView.delegate = self
         eventTableView.dataSource = self
         eventTableView.register(EventTableViewCell.self, forCellReuseIdentifier: postReuseIdentifier)
@@ -62,4 +61,16 @@ extension DiscoverViewController: UITableViewDataSource{
         return cell
     }
 
+}
+
+extension DiscoverViewController: CreateEventDelegate {
+    
+    func createEvent(title: String) {
+        let newEvent = Event(title: title, location: "", date: "", description: "", organizer: "", major: "")
+        self.eventData.append(newEvent)
+    }
+    
+    func reloadTableView() {
+        eventTableView.reloadData()
+    }
 }
