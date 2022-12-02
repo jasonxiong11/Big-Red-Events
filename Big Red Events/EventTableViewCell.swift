@@ -16,8 +16,6 @@ class EventTableViewCell: UITableViewCell {
     var locationImage = UIImageView()
     var calendarImage = UIImageView()
     
-    var stackView = UIStackView()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
@@ -37,21 +35,19 @@ class EventTableViewCell: UITableViewCell {
         
         savedButton.setImage(UIImage(systemName: "heart"), for: .normal)
         savedButton.translatesAutoresizingMaskIntoConstraints = false
+        savedButton.tintColor = .systemRed
+        contentView.addSubview(savedButton)
         
         titleLabel.textAlignment = .left
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         titleLabel.textColor = .systemRed
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.alignment = .leading
-//        stackView.distribution = .equalSpacing
-//        stackView.axis = .vertical
-//
-//        stackView.addArrangedSubview(titleLabel)
-//        stackView.addArrangedSubview(locationImage)
-//        stackView.addArrangedSubview(calendarImage)
-//        contentView.addSubview(stackView)
+        
+        locationLabel.font = UIFont.systemFont(ofSize: 20)
+        locationLabel.textColor = .black
+        locationLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(locationLabel)
     }
     func setupConstraints(){
         NSLayoutConstraint.activate([
@@ -65,7 +61,17 @@ class EventTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             calendarImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             calendarImage.topAnchor.constraint(equalTo: locationImage.bottomAnchor, constant: 10),
-            contentView.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 68)
+            contentView.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 70)
+        ])
+        
+        NSLayoutConstraint.activate([
+            locationLabel.leadingAnchor.constraint(equalTo: locationImage.trailingAnchor, constant: 2),
+            locationLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
+        ])
+        
+        NSLayoutConstraint.activate([
+            savedButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            savedButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15)
         ])
     }
     

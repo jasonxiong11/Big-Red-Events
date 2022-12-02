@@ -8,32 +8,60 @@
 import UIKit
 
 class AddViewController: UIViewController {
-
+    
+    var scrollView = UIScrollView()
+    var contentView = UIView()
+    
     var titleLabel = UILabel()
     var titleTextField = UITextField()
     var descriptionTextView = UITextView()
     var locationTextField = UITextField()
     var organizerTextField = UITextField()
+    var dateTextField = UITextField()
     var addButton = UIButton()
     
     weak var delegate: CreateEventDelegate?
     weak var myView: UIViewController?
+    var tbHeight: CGFloat?
+
     
     init(delegate: CreateEventDelegate) {
-//        self.myView = delegate
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
+        tbHeight = tabBarController!.tabBar.frame.height
+
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        setupScrollView()
+        setupViews()
+        view.layoutIfNeeded()
+        
+    }
+    func setupScrollView(){
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+
+        scrollView.isScrollEnabled = true
+        scrollView.isUserInteractionEnabled = true
+        
+        NSLayoutConstraint.activate([
+            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    func setupViews(){
         titleLabel.text = "Add Event"
         titleLabel.textColor = .systemRed
         titleLabel.font = .systemFont(ofSize: 40, weight: .bold)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleLabel)
+        scrollView.addSubview(titleLabel)
         
         let color = UIColor.systemRed
         
@@ -46,7 +74,7 @@ class AddViewController: UIViewController {
         titleTextField.layer.borderWidth = 2.0
         titleTextField.layer.borderColor = color.cgColor
         titleTextField.tintColor = .systemRed
-        view.addSubview(titleTextField)
+        scrollView.addSubview(titleTextField)
         
         descriptionTextView.text = "Description of event"
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +86,7 @@ class AddViewController: UIViewController {
         descriptionTextView.layer.borderWidth = 2.0
         descriptionTextView.layer.borderColor = color.cgColor
         descriptionTextView.tintColor = .systemRed
-        view.addSubview(descriptionTextView)
+        scrollView.addSubview(descriptionTextView)
         
         locationTextField.placeholder = "  Location of event"
         locationTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +97,7 @@ class AddViewController: UIViewController {
         locationTextField.layer.borderWidth = 2.0
         locationTextField.layer.borderColor = color.cgColor
         locationTextField.tintColor = .systemRed
-        view.addSubview(locationTextField)
+        scrollView.addSubview(locationTextField)
         
         organizerTextField.placeholder = "  Organizer of event"
         organizerTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -80,47 +108,67 @@ class AddViewController: UIViewController {
         organizerTextField.layer.borderWidth = 2.0
         organizerTextField.layer.borderColor = color.cgColor
         organizerTextField.tintColor = .systemRed
-        view.addSubview(organizerTextField)
+        scrollView.addSubview(organizerTextField)
+        
+        dateTextField.placeholder = "  Date of event"
+        dateTextField.translatesAutoresizingMaskIntoConstraints = false
+        dateTextField.clipsToBounds = true
+        dateTextField.layer.cornerRadius = 10
+        dateTextField.backgroundColor = .white
+        dateTextField.font = .systemFont(ofSize: 20)
+        dateTextField.layer.borderWidth = 2.0
+        dateTextField.layer.borderColor = color.cgColor
+        dateTextField.tintColor = .systemRed
+        scrollView.addSubview(dateTextField)
         
         addButton.setTitle("Add", for: .normal)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.backgroundColor = .systemRed
         addButton.layer.cornerRadius = 15
         addButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
-        view.addSubview(addButton)
+        scrollView.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20)
             ])
         NSLayoutConstraint.activate([
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            titleTextField.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            titleTextField.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            titleTextField.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
         NSLayoutConstraint.activate([
             descriptionTextView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 20),
-            descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            descriptionTextView.heightAnchor.constraint(equalTo: view.widthAnchor)
+            descriptionTextView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            descriptionTextView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            descriptionTextView.heightAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         NSLayoutConstraint.activate([
             locationTextField.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 20),
-            locationTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            locationTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            locationTextField.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            locationTextField.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20)
         ])
         NSLayoutConstraint.activate([
             organizerTextField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 20),
-            organizerTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            organizerTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            organizerTextField.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            organizerTextField.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20)
         ])
+        
         NSLayoutConstraint.activate([
-            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
+            dateTextField.topAnchor.constraint(equalTo: organizerTextField.bottomAnchor, constant: 20),
+            dateTextField.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            dateTextField.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            addButton.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 20),
+            addButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            addButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5),
+            addButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -tbHeight!)
+            
         ])
     }
-    
     @objc func addAction() {
         let title = titleTextField.text!
         delegate?.createEvent(title: title)
