@@ -10,7 +10,6 @@ import UIKit
 class AddViewController: UIViewController {
     
     var scrollView = UIScrollView()
-    var contentView = UIView()
     
     var titleLabel = UILabel()
     var titleTextField = UITextField()
@@ -21,7 +20,6 @@ class AddViewController: UIViewController {
     var addButton = UIButton()
     
     weak var delegate: CreateEventDelegate?
-    weak var myView: UIViewController?
     var tbHeight: CGFloat?
 
     
@@ -171,10 +169,10 @@ class AddViewController: UIViewController {
     }
     @objc func addAction() {
         let title = titleTextField.text!
-        delegate?.createEvent(title: title)
+        let location = locationTextField.text!
+        let date = dateTextField.text!
+        delegate?.createEvent(title: title, location: location, date: date)
         delegate?.reloadTableView()
-//        delegate?.reloadInputViews()
-
     }
     
     required init?(coder: NSCoder) {
@@ -183,6 +181,6 @@ class AddViewController: UIViewController {
 
 }
 protocol CreateEventDelegate: UIViewController {
-    func createEvent(title: String)
+    func createEvent(title: String, location: String, date: String)
     func reloadTableView()
 }

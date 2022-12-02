@@ -36,6 +36,7 @@ class EventTableViewCell: UITableViewCell {
         savedButton.setImage(UIImage(systemName: "heart"), for: .normal)
         savedButton.translatesAutoresizingMaskIntoConstraints = false
         savedButton.tintColor = .systemRed
+        savedButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         contentView.addSubview(savedButton)
         
         titleLabel.textAlignment = .left
@@ -48,6 +49,11 @@ class EventTableViewCell: UITableViewCell {
         locationLabel.textColor = .black
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(locationLabel)
+        
+        dateLabel.font = UIFont.systemFont(ofSize: 20)
+        dateLabel.textColor = .black
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(dateLabel)
     }
     func setupConstraints(){
         NSLayoutConstraint.activate([
@@ -70,13 +76,29 @@ class EventTableViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            savedButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            savedButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15)
+            dateLabel.leadingAnchor.constraint(equalTo: calendarImage.trailingAnchor, constant: 4),
+            dateLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 7)
         ])
+        
+        NSLayoutConstraint.activate([
+            savedButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            savedButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20)
+        ])
+    }
+    
+    @objc func buttonPressed(){
+        if savedButton.currentImage == UIImage(systemName: "heart")!{
+            savedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        else{
+            savedButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
     }
     
     func configure(eventObject: Event) {
         titleLabel.text = eventObject.title
+        locationLabel.text = eventObject.location
+        dateLabel.text = eventObject.date
     }
     
     required init?(coder: NSCoder) {

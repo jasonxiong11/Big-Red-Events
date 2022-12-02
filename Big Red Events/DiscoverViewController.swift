@@ -65,8 +65,8 @@ extension DiscoverViewController: UITableViewDataSource{
 
 extension DiscoverViewController: CreateEventDelegate {
     
-    func createEvent(title: String) {
-        let newEvent = Event(title: title, location: "", date: "", description: "", organizer: "", major: "")
+    func createEvent(title: String, location: String, date: String) {
+        let newEvent = Event(title: title, location: location, date: date, description: "", organizer: "", major: "")
         self.eventData.append(newEvent)
     }
     
