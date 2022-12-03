@@ -10,6 +10,10 @@ import UIKit
 class SavedViewController: UIViewController {
 
     var titleLabel = UILabel()
+    var savedTableView = UITableView()
+    let postReuseIdentifier = "postReuseIdentifier"
+    
+    var savedData: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -46,7 +46,9 @@ class DiscoverViewController: UIViewController {
 
 }
 extension DiscoverViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        present(DetailViewController(), animated: true)
+    }
 }
 
 extension DiscoverViewController: UITableViewDataSource{
